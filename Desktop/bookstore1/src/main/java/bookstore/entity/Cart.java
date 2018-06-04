@@ -1,4 +1,4 @@
-package bookstore.cart;
+package bookstore.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,6 +10,7 @@ public class Cart {
     private int userid;
     private int bookid;
     private int bookprice;
+    private String bookname;
 
     public Cart(){}
 
@@ -41,6 +42,16 @@ public class Cart {
 
     public void setBookprice(Integer bookprice) {
         this.bookprice = bookprice;
+    }
+
+    @Basic
+    @Column(name = "bookname", nullable = true)
+    public String getBookname() {
+        return bookname;
+    }
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
     }
 
     @Override

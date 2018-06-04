@@ -1,4 +1,4 @@
-package bookstore.book;
+package bookstore.entity;
 
 import javax.persistence.*;
 import java.util.Objects;

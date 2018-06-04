@@ -1,16 +1,19 @@
-package bookstore.book;
+package bookstore.service;
 
 
 import java.util.List;
+
+import bookstore.dao.BookDao;
+import bookstore.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
+/* Book业务实现类 */
 @Service
-public class BookService {
+public class BookServiceImpl implements BookService{
     @Autowired
-    private BookDao bookRepo;//code10
+    private BookDao bookRepo;
 
     public Book queryById(int id) {
         return bookRepo.queryById(id).get(0);
@@ -18,10 +21,6 @@ public class BookService {
 
     public Book queryByTitle(String t) {
         return bookRepo.queryByTitle(t).get(0);
-    }
-
-    public List<Book> queryByAuthor(String au) {
-        return bookRepo.queryBookByAuthor(au);
     }
 
     public Book create(Book b) {
@@ -34,5 +33,11 @@ public class BookService {
 
     public List<Book>findByTitleLike(String tit){
         return bookRepo.findByTitleLike(tit);
+    }
+
+    public List<Book> queryAllBy(){
+        List<Book> list = bookRepo.queryAllBy();
+        System.out.println(list.size());
+        return list;
     }
 }

@@ -1,4 +1,4 @@
-package bookstore.cart;
+package bookstore.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

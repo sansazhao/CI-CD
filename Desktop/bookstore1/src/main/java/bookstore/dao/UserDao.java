@@ -1,5 +1,6 @@
-package bookstore.userService;
+package bookstore.dao;
 
+import bookstore.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -22,7 +23,6 @@ public interface UserDao extends JpaRepository<User, Integer> {
 
     List<User> findAll();
 
-   // String insert();
     User save(User u);
 
     @Query("select u from User u where u.id >= all(select id from User)")

@@ -1,4 +1,4 @@
-package bookstore.userService;
+package bookstore.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,8 +10,7 @@ public class User {
     private String username;
     private String role;
     private String password;
-
-
+    
     @Id
     @Column(name = "id", nullable = false, precision = 0)
     public int getId() {

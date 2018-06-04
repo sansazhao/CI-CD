@@ -1,12 +1,14 @@
-package bookstore.userService;
+package bookstore.service;
 
+import bookstore.dao.UserDao;
+import bookstore.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userRepo;//code10
 
